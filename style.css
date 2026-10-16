@@ -429,9 +429,15 @@ dialog::backdrop {
     max-width: none;
     white-space: nowrap;
   }
-    .ornament-05 {
+    .ornament-01 {
     width: 70px;
     left: 0;
     top: 55%;
   }
+  .ornament-05 {
+  width: 115px;
+  right: 3%;
+  top: 8%;
+}
+
 }
