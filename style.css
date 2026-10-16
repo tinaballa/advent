@@ -339,11 +339,11 @@ dialog::backdrop {
     border-radius: 5px;
   }
 
-  .ornament-01 {
+/*  .ornament-01 {
     width: 70px;
     right: 0;
     top: 13%;
-  }
+  }*/
 
   .ornament-02 {
     width: 180px;
