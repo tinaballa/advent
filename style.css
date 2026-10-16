@@ -363,11 +363,11 @@ dialog::backdrop {
     bottom: 0;
   }
 
-  .ornament-05 {
+ /* .ornament-05 {
     width: 70px;
     right: 0;
     top: 44%;
-  }
+  }*/
 
   .ornament-06 {
     width: 15px;
