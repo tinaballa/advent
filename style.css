@@ -339,11 +339,12 @@ dialog::backdrop {
     border-radius: 5px;
   }
 
-/*  .ornament-01 {
+    .ornament-01 {
     width: 70px;
-    right: 0;
-    top: 13%;
-  }*/
+    left: 0;
+    top: 55%;
+  }
+
 
   .ornament-02 {
     width: 180px;
@@ -363,11 +364,11 @@ dialog::backdrop {
     bottom: 0;
   }
 
- /* .ornament-05 {
-    width: 70px;
-    right: 0;
-    top: 44%;
-  }*/
+  .ornament-05 {
+  width: 90px;
+  right: 3%;
+  top: 10%;
+}
 
   .ornament-06 {
     width: 15px;
@@ -429,15 +430,6 @@ dialog::backdrop {
     max-width: none;
     white-space: nowrap;
   }
-    .ornament-01 {
-    width: 70px;
-    left: 0;
-    top: 55%;
-  }
-  .ornament-05 {
-  width: 90px;
-  right: 3%;
-  top: 10%;
-}
+
 
 }
