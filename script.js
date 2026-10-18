@@ -121,9 +121,6 @@ for (let i = 1; i <= 24; i++) {
   doors.appendChild(button);
 }
 
- doors.appendChild(button);
-}
-
 // Bonuskachel für den 25. Dezember
 const bonus = document.createElement('button');
 
@@ -140,6 +137,7 @@ if (day >= 25) {
 
 doors.appendChild(bonus);
 
+// Hinweis zum Testmodus
 document.getElementById('notice').textContent = demo ? tr.test : '';
 
 // Rezeptfenster
