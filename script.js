@@ -128,7 +128,7 @@ bonus.type = 'button';
 bonus.className = 'door bonus ' +
   (day < 25 ? 'future' : day === 25 ? 'today' : 'past');
 
-bonus.textContent = en ? 'Bonus recipes' : 'Bonusrezepte';
+bonus.textContent = en ? 'Bonus' : 'Bonus';
 bonus.disabled = day < 25;
 
 if (day >= 25) {
