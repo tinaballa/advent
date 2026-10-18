@@ -145,7 +145,7 @@ h1 {
 }
 
 .door.bonus {
-  grid-column: 1 / -1;
+  grid-column: auto;
   min-height: 85px;
   font-family: 'Fraunces', Georgia, serif;
   font-size: clamp(20px, 4vw, 30px);
