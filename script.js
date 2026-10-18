@@ -57,12 +57,12 @@ document.getElementById('groupLabel').textContent = group;
 const now = new Date();
 const demo = params.get('demo') === '1';
 
-const day = demo
-  ? 3
+ const day = demo
+  ? 25
   : now.getFullYear() > 2026
-    ? 24
+    ? 25
     : now.getFullYear() === 2026 && now.getMonth() === 11
-      ? Math.min(24, now.getDate())
+      ? Math.min(25, now.getDate())
       : 0;
 
 // PDF-Zuordnungen der vier Kalender
@@ -120,6 +120,25 @@ for (let i = 1; i <= 24; i++) {
 
   doors.appendChild(button);
 }
+
+ doors.appendChild(button);
+}
+
+// Bonuskachel für den 25. Dezember
+const bonus = document.createElement('button');
+
+bonus.type = 'button';
+bonus.className = 'door bonus ' +
+  (day < 25 ? 'future' : day === 25 ? 'today' : 'past');
+
+bonus.textContent = en ? 'Bonus recipes' : 'Bonusrezepte';
+bonus.disabled = day < 25;
+
+if (day >= 25) {
+  bonus.addEventListener('click', () => showRecipe(25));
+}
+
+doors.appendChild(bonus);
 
 document.getElementById('notice').textContent = demo ? tr.test : '';
 
