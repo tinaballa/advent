@@ -430,6 +430,10 @@ dialog::backdrop {
     max-width: none;
     white-space: nowrap;
   }
-
-
+}
+/* =========================================================
+   BUTTON
+   ========================================================= */
+.pdf-link[hidden] {
+  display: none;
 }
