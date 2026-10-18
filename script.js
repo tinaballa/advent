@@ -153,6 +153,8 @@ function showRecipe(dayNumber) {
   if (path) {
     link.href = '/' + path;
     link.textContent = tr.open;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
   }
 
   dialog.showModal();
