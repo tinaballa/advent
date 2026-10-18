@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/style.css">
   <script defer src="/script.js"></script>
 </head>
+
 <body>
   <main class="poster">
     <img class="ornament ornament-01" src="/Icon_01.svg" alt="" aria-hidden="true">
@@ -19,11 +20,27 @@
     <img class="ornament ornament-07" src="/Icon_07.svg" alt="" aria-hidden="true">
     <img class="ornament ornament-08" src="/Icon_08.svg" alt="" aria-hidden="true">
     <img class="ornament ornament-09" src="/Icon_09.svg" alt="" aria-hidden="true">
-    <header class="heading"><h1 id="title">Adventskalender 2026</h1><p class="subtitle" id="subtitle">Täglich ein neues Lieblingsrezept</p></header>
-    <section class="calendar" aria-label="Adventskalender"><div class="doors" id="doors"></div></section>
+    <header class="heading">
+      <h1 id="title">Adventskalender 2026</h1>
+      <p class="subtitle" id="subtitle">Täglich ein neues Lieblingsrezept</p>
+    </header>
+    <section class="calendar" aria-label="Adventskalender">
+      <div class="doors" id="doors"></div>
+    </section>
     <p class="notice" id="notice" aria-live="polite"></p>
-    <footer><span id="groupLabel"></span><span>2026</span></footer>
+    <footer>
+      <span id="groupLabel"></span>
+      <span>2026</span>
+    </footer>
   </main>
-  <dialog id="recipeDialog" aria-labelledby="dialogTitle"><div class="dialog-inner"><button class="close" id="closeDialog" aria-label="Schließen">×</button><p class="eyebrow" id="dialogEyebrow">Türchen</p><h2 id="dialogTitle"></h2><p id="dialogText"></p><a class="pdf-link" id="pdfLink" href="#" target="_blank" rel="noopener" hidden>PDF öffnen</a></div></dialog>
+  <dialog id="recipeDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-inner">
+      <button class="close" id="closeDialog" aria-label="Schließen">×</button>
+      <p class="eyebrow" id="dialogEyebrow">Türchen</p>
+      <h2 id="dialogTitle"></h2>
+      <p id="dialogText"></p>
+      <a class="pdf-link" id="pdfLink" href="#" target="_blank" rel="noopener" hidden>PDF öffnen</a>
+    </div>
+  </dialog>
 </body>
 </html>
