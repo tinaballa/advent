@@ -1,6 +1,7 @@
-/* Teststand: Gruppen vorbereitet, PDF-Zuordnungen werden später ergänzt. */
+/* Adventskalender 2026: Gruppen und PDF-Zuordnungen. */
 const params=new URLSearchParams(location.search);
-const group=params.get('gruppe')||'advent1';
+const pathGroup=({lwl:'lwl',vegan:'vegan',english:'advent_en',advent:'advent1'})[location.pathname.split('/').filter(Boolean)[0]];
+const group=pathGroup||params.get('gruppe')||'advent1';
 const groups={advent1:{lang:'de'},vegan:{lang:'de'},lwl:{lang:'de'},advent_en:{lang:'en'}};
 const settings=groups[group]||groups.advent1;
 const en=settings.lang==='en';
@@ -10,9 +11,21 @@ for(const [id,key] of [['title','title'],['subtitle','subtitle']])document.getEl
 document.title=tr.title;
 document.getElementById('groupLabel').textContent=group;
 const now=new Date();
-const demo=params.get('live')!=='1'; // ?live=1 zeigt echte Datumsfreischaltung; Testmodus ist Standard
+const demo=params.get('demo')==='1'; // Vorschau nur mit ?demo=1; sonst echte Datumsfreischaltung
 const day=demo?3:(now.getFullYear()>2026?24:now.getFullYear()===2026&&now.getMonth()===11?Math.min(24,now.getDate()):0);
-const pdfs={}; // Später je Gruppe und Tag: {advent1:{1:'pdf/advent1/01.pdf'}, ...}
+// PDF-Dateien pro Gruppe und Kalendertag.
+// Weitere Rezepte hier ergänzen, z. B. 5: 'rezepte_lwl/DE-001_Tag-05.pdf'.
+const pdfs = {
+  advent1: {},
+  vegan: {},
+  lwl: {
+    1: 'rezepte_lwl/DE-001_Tag-01.pdf',
+    2: 'rezepte_lwl/DE-001_Tag-02.pdf',
+    3: 'rezepte_lwl/DE-001_Tag-03.pdf',
+    4: 'rezepte_lwl/DE-001_Tag-04.pdf'
+  },
+  advent_en: {}
+};
 const doors=document.getElementById('doors');
 for(let i=1;i<=24;i++){
  const b=document.createElement('button');b.type='button';b.className='door '+(i>day?'future':i===day?'today':'past');b.textContent=i;b.disabled=i>day;
@@ -30,6 +43,6 @@ function showRecipe(i){
  const path=(pdfs[group]||{})[i];
  document.getElementById('dialogText').textContent=path?'':tr.missing;
  const link=document.getElementById('pdfLink');link.hidden=!path;
- if(path){link.href=path;link.textContent=tr.open}
+ if(path){link.href='/' + path.replace(/^\/+/, '');link.textContent=tr.open}
  dialog.showModal();
 }
