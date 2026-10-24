@@ -19,7 +19,7 @@ const groups = {
 };
 
 const requestedGroup =
-  pathGroups[firstPathSegment] || params.get('gruppe') || 'advent1';
+  params.get('gruppe') || pathGroups[firstPathSegment] || 'advent1';
 
 const group = Object.prototype.hasOwnProperty.call(groups, requestedGroup)
   ? requestedGroup
@@ -34,24 +34,34 @@ const tr = en ? {
   door: 'Day',
   today: 'Today’s recipe',
   unavailable: 'This door opens in December.',
-  test: 'Design preview: day 3 is open for testing.',
+  test: 'Design preview: all doors are open for testing.',
   missing: 'The recipe PDF will be linked here later.',
-  open: 'Open PDF'
+  open: 'Open PDF',
+  close: 'Close',
+  calendar: 'Advent calendar',
+  bonusFirst: 'Bonus',
+  bonusSecond: 'recipes'
 } : {
   title: 'Adventskalender 2026',
   subtitle: 'Täglich ein neues Lieblingsrezept',
   door: 'Türchen',
   today: 'Heutiges Rezept',
   unavailable: 'Dieses Türchen öffnet sich erst im Dezember.',
-  test: 'Gestaltungsvorschau: Türchen 3 ist zum Testen geöffnet.',
+  test: 'Gestaltungsvorschau: Alle Türchen sind zum Testen geöffnet.',
   missing: 'Hier wird später das Rezept-PDF verlinkt.',
-  open: 'PDF öffnen'
+  open: 'PDF öffnen',
+  close: 'Schließen',
+  calendar: 'Adventskalender',
+  bonusFirst: 'Bonus-',
+  bonusSecond: 'rezepte'
 };
 
 document.getElementById('title').textContent = tr.title;
 document.getElementById('subtitle').textContent = tr.subtitle;
 document.title = tr.title;
 document.getElementById('groupLabel').textContent = group;
+document.querySelector('.calendar').setAttribute('aria-label', tr.calendar);
+document.getElementById('closeDialog').setAttribute('aria-label', tr.close);
 
 // Datumsfreischaltung und Testmodus
 const now = new Date();
@@ -128,7 +138,15 @@ bonus.type = 'button';
 bonus.className = 'door bonus ' +
   (day < 25 ? 'future' : day === 25 ? 'today' : 'past');
 
-bonus.textContent = en ? 'Bonus' : 'Bonus';
+bonus.replaceChildren(
+  document.createTextNode(tr.bonusFirst),
+  document.createElement('br'),
+  document.createTextNode(tr.bonusSecond)
+);
+bonus.setAttribute(
+  'aria-label',
+  en ? 'Bonus recipes' : 'Bonusrezepte'
+);
 bonus.disabled = day < 25;
 
 if (day >= 25) {
