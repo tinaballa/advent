@@ -8,6 +8,7 @@ const pathGroups = {
   advent: 'advent1',
   vegan: 'vegan',
   lwl: 'lwl',
+  ODAE:'ODAE',
   english: 'advent_en'
 };
 
@@ -15,6 +16,7 @@ const groups = {
   advent1: { lang: 'de' },
   vegan: { lang: 'de' },
   lwl: { lang: 'de' },
+  ODAE: { lang: 'en' },
   advent_en: { lang: 'en' }
 };
 
