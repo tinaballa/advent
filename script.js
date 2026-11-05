@@ -99,6 +99,13 @@ const pdfs = {
     3: 'rezepte_lwl/DE_Tag-03.pdf',
     4: 'rezepte_lwl/DE_Tag-04.pdf'
   },
+  
+   ODAE: {
+    1: 'rezepte_ODAE/DE_Tag-01.pdf',
+    2: 'rezepte_ODAE/DE_Tag-02.pdf',
+    3: 'rezepte_ODAE/DE_Tag-03.pdf',
+    4: 'rezepte_ODAE/DE_Tag-04.pdf'
+  },
 
   advent_en: {
     1: 'rezepte_advent_en/EN_Tag-01.pdf',
