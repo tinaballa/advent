@@ -260,7 +260,7 @@ dialog::backdrop {
 }
 
 .dialog-inner h2 {
-  font: 800 clamp(38px,6vw,64px)/1.05 Fraunces,Georgia,serif;
+  font: 800 clamp(38px,4vw,48px)/1.05 Fraunces,Georgia,serif;
   color: var(--orange);
   margin: 0 0 18px;
 }
@@ -284,12 +284,12 @@ dialog::backdrop {
 .pdf-link {
   display: inline-block;
   margin-top: 12px;
-  background: var(--orange);
-  color: white;
+  background: #ffc8cd;
+  color: #fe572;
   padding: 14px 24px;
   border-radius: 5px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 @media (max-width:1050px) {
