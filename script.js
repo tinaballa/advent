@@ -3,10 +3,10 @@ const firstPathSegment = window.location.pathname.split('/').filter(Boolean)[0];
 
 const calendarConfig = {
   advent:    { key: 'advent_all', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
-  advent_veg:{ key: 'advent_veg', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues vegetarisches Lieblingsrezept', lang: 'de' },
-  lwl:       { key: 'lwl_all', title: 'LWL-Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
-  lwl_veg:   { key: 'lwl_veg', title: 'LWL-Adventskalender 2026', subtitle: 'Täglich ein neues vegetarisches Lieblingsrezept', lang: 'de' },
-  vegan:     { key: 'vegan', title: 'Veganer Adventskalender 2026', subtitle: 'Täglich ein neues veganes Lieblingsrezept', lang: 'de' },
+  advent_veg:{ key: 'advent_veg', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
+  lwl:       { key: 'lwl_all', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
+  lwl_veg:   { key: 'lwl_veg', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
+  vegan:     { key: 'vegan', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
   ODAE:      { key: 'ODAE', title: 'ODAE Advent Calendar 2026', subtitle: 'A new favourite recipe every day', lang: 'en' }
 };
 
