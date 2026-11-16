@@ -16,7 +16,7 @@ document.documentElement.lang = config.lang;
 
 const tr = en ? {
   door: 'Day',
-  today: 'Today’s recipe',
+  today: 'a new day, a new recipe!',
   unavailable: 'This door opens in December.',
   test: 'Design preview: all doors are open for testing.',
   missing: 'The recipe PDF has not been added yet.',
@@ -25,7 +25,7 @@ const tr = en ? {
   calendar: 'Advent calendar'
 } : {
   door: 'Türchen',
-  today: 'Heutiges Rezept',
+  today: 'Ein neuer Tag, ein neues Rezept!',
   unavailable: 'Dieses Türchen öffnet sich erst im Dezember.',
   test: 'Gestaltungsvorschau: Alle Türchen sind zum Testen geöffnet.',
   missing: 'Das Rezept-PDF wurde noch nicht hinzugefügt.',
