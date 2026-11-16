@@ -7,7 +7,7 @@ const calendarConfig = {
   lwl:       { key: 'lwl_all', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
   lwl_veg:   { key: 'lwl_veg', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
   vegan:     { key: 'vegan', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
-  ODAE:      { key: 'ODAE', title: 'ODAE Advent Calendar 2026', subtitle: 'A new favourite recipe every day', lang: 'en' }
+  ODAE:      { key: 'ODAE', title: 'Advent Calendar 2026', subtitle: 'A new favourite recipe every day', lang: 'en' }
 };
 
 const config = calendarConfig[firstPathSegment] || calendarConfig.advent;
