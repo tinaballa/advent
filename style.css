@@ -260,7 +260,7 @@ dialog::backdrop {
 }
 
 .dialog-inner h2 {
-  font: 800 clamp(38px,4vw,48px)/1.05 Fraunces,Georgia,serif;
+  font: 600 clamp(38px,4vw,48px)/1.05 Fraunces,Georgia,serif;
   color: var(--orange);
   margin: 0 0 18px;
 }
