@@ -365,8 +365,8 @@ dialog::backdrop {
 
   .ornament-03 {
     width: 18px;
-    left: 3%;
-    top: 29%;
+    left: 2%;
+    top: 22%;
   }
 
   .ornament-04 {
@@ -377,8 +377,8 @@ dialog::backdrop {
 
   .ornament-05 {
   width: 90px;
-  left: 81%;
-  top: 10%;
+  left: 82%;
+  top: 11%;
 }
 
   .ornament-06 {
@@ -389,7 +389,7 @@ dialog::backdrop {
 
   .ornament-07 {
     width: 24px;
-    left: 2%;
+    left: -1%;
     bottom: 21%;
   }
 
