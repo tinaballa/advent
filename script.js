@@ -205,6 +205,12 @@ const pdfs = {
 16: '../recipes_ODAE/16_Chubby-Hubby-Popcorn.pdf'
 17: '../recipes_ODAE/17_Eggplant-and-Tomato-Dip.pdf'
 18: '../recipes_ODAE/18_Rolo-Pretzel-Turtles.pdf'
+19: '../recipes_ODAE/18_Rolo-Pretzel-Turtles.pdf'
+20: '../recipes_ODAE/18_Rolo-Pretzel-Turtles.pdf'
+21: '../recipes_ODAE/18_Rolo-Pretzel-Turtles.pdf'
+22: '../recipes_ODAE/18_Rolo-Pretzel-Turtles.pdf'
+23: '../recipes_ODAE/18_Rolo-Pretzel-Turtles.pdf'
+24: '../recipes_ODAE/18_Rolo-Pretzel-Turtles.pdf'
   }
 };
 
