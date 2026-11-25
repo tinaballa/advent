@@ -208,6 +208,10 @@ function showRecipe(dayNumber) {
   document.getElementById('dialogEyebrow').textContent = tr.door + ' ' + dayNumber;
   document.getElementById('dialogTitle').textContent = tr.today;
   const path = pdfs[config.key]?.[dayNumber];
+  console.log('Kalender:', config.key);
+console.log('Tag:', dayNumber);
+console.log('PDF-Zuordnung:', pdfs[config.key]);
+console.log('PDF-Pfad:', path);
   document.getElementById('dialogText').textContent = path ? '' : tr.missing;
   const link = document.getElementById('pdfLink');
   link.hidden = !path;
