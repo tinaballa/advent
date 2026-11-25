@@ -181,7 +181,6 @@ const pdfs = {
     24: '../rezepte_vegan/24_Tide-me-over-bars.pdf',
   },
   ODAE: {
-
   },
 };
 
