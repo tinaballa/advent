@@ -1,13 +1,14 @@
+
 /* Adventskalender 2026 – sechs Kalender, gemeinsames Script */
 const firstPathSegment = window.location.pathname.split('/').filter(Boolean)[0];
 
 const calendarConfig = {
-  advent:    { key: 'advent_all', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
-  advent_veg:{ key: 'advent_veg', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
-  lwl:       { key: 'lwl_all', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
-  lwl_veg:   { key: 'lwl_veg', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
-  vegan:     { key: 'vegan', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
-  ODAE:      { key: 'ODAE', title: 'Advent Calendar 2026', subtitle: 'A new favourite recipe every day', lang: 'en' }
+  advent:     { key: 'advent', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
+  advent_veg: { key: 'advent_veg', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
+  lwl:        { key: 'lwl', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
+  lwl_veg:    { key: 'lwl_veg', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
+  vegan:      { key: 'vegan', title: 'Adventskalender 2026', subtitle: 'Täglich ein neues Lieblingsrezept', lang: 'de' },
+  ODAE:       { key: 'ODAE', title: 'Advent Calendar 2026', subtitle: 'A new favourite recipe every day', lang: 'en' }
 };
 
 const config = calendarConfig[firstPathSegment] || calendarConfig.advent;
@@ -48,7 +49,7 @@ const day = demo ? 24 :
   now.getFullYear() > 2026 ? 24 :
   now.getFullYear() === 2026 && now.getMonth() === 11 ? Math.min(24, now.getDate()) : 0;
 
-// Exakte PDF-Dateinamen; ODAE wird ergänzt, sobald die englischen Rezepte vorliegen.
+// PDF-Dateien
 const pdfs = {
   advent: {
     1: '../rezepte_advent_alles/01_Herzhafte-Gemuese-Rolle.pdf',
@@ -74,8 +75,9 @@ const pdfs = {
     21: '../rezepte_advent_alles/21_Hausgemachte-Dinkelpizza.pdf',
     22: '../rezepte_advent_alles/22_Veggie-Bolognese-Pasta.pdf',
     23: '../rezepte_advent_alles/23_Brokkolitorte.pdf',
-    24: '../rezepte_advent_alles/24_Knoedelpfanne-mit-Champignons-und-Tofu.pdf',
+    24: '../rezepte_advent_alles/24_Knoedelpfanne-mit-Champignons-und-Tofu.pdf'
   },
+
   advent_veg: {
     1: '../rezepte_advent_veg/01_Kichererbsen-Curry.pdf',
     2: '../rezepte_advent_veg/02_Matts-Curry.pdf',
@@ -100,20 +102,21 @@ const pdfs = {
     21: '../rezepte_advent_veg/21_Hausgemachte-Dinkelpizza.pdf',
     22: '../rezepte_advent_veg/22_Veggie-Bolognese-Pasta.pdf',
     23: '../rezepte_advent_veg/23_Easy-peasy-Erdnuss-Miso-Ramen.pdf',
-    24: '../rezepte_advent_veg/24_Pasta-Trapanese-benannt-nach-der-sizilianischen-Stadt-Trapani.pdf',
+    24: '../rezepte_advent_veg/24_Pasta-Trapanese-benannt-nach-der-sizilianischen-Stadt-Trapani.pdf'
   },
+
   lwl: {
-    1: '../rezepte_lwl_alles/01_Ein-einfacher-Pfaelzer-Saumagen.pdf',
+    1: '../rezepte_lwl_alles/01_Een-beetje-van-Greetje-Rote-Bete-mit-Curry-und-Essig.pdf',
     2: '../rezepte_lwl_alles/02_Kartoffelgulasch-mit-Wuerstchen.pdf',
     3: '../rezepte_lwl_alles/03_Dolma-Ein-Stueck-kurdische-Heimat-auf-dem-Teller.pdf',
     4: '../rezepte_lwl_alles/04_Veganer-Curry.pdf',
     5: '../rezepte_lwl_alles/05_Udon-Nudeln-in-Massaman-Erdnuss-Sauce-mit-Kokosmilch-und-Pak-Choi.pdf',
-    6: '../rezepte_lwl_alles/06_Een-beetje-van-Greetje-Rote-Bete-mit-Curry-und-Essig.pdf',
+    6: '../rezepte_lwl_alles/06_Ein-einfacher-Pfaelzer-Saumagen.pdf',
     7: '../rezepte_lwl_alles/07_Kartoffel-Karotten-Kohl-Eintopf.pdf',
     8: '../rezepte_lwl_alles/08_Easy-peasy-Erdnuss-Miso-Ramen.pdf',
     9: '../rezepte_lwl_alles/09_Tom-Ka-Gai.pdf',
     10: '../rezepte_lwl_alles/10_Dinkel-Wurzelbrot.pdf',
-    11: '../rezepte_lwl_alles/11_Chicken-Katsu-Burger.pdf',
+    11: '../rezepte_lwl_alles/11_Suesskartoffel-Pizza.pdf',
     12: '../rezepte_lwl_alles/12_Graupenrisotto-mit-geroesteten-Rotkohlspalten.pdf',
     13: '../rezepte_lwl_alles/13_Maultaschenpfanne.pdf',
     14: '../rezepte_lwl_alles/14_Pasta-Trapanese-benannt-nach-der-sizilianischen-Stadt-Trapani.pdf',
@@ -126,8 +129,9 @@ const pdfs = {
     21: '../rezepte_lwl_alles/21_Rote-Bete-Burger.pdf',
     22: '../rezepte_lwl_alles/22_Traenchenkuchen-mit-Rhabarber.pdf',
     23: '../rezepte_lwl_alles/23_Auberginen-Auflauf-mit-Mozzarella.pdf',
-    24: '../rezepte_lwl_alles/24_Brokkolitorte.pdf',
+    24: '../rezepte_lwl_alles/24_Brokkolitorte.pdf'
   },
+
   lwl_veg: {
     1: '../rezepte_lwl_veg/01_Graupenrisotto-mit-geroesteten-Rotkohlspalten.pdf',
     2: '../rezepte_lwl_veg/02_Auberginen-Auflauf-mit-Mozzarella.pdf',
@@ -141,7 +145,7 @@ const pdfs = {
     10: '../rezepte_lwl_veg/10_Easy-peasy-Erdnuss-Miso-Ramen.pdf',
     11: '../rezepte_lwl_veg/11_Tom-Ka-Gai.pdf',
     12: '../rezepte_lwl_veg/12_Dinkel-Wurzelbrot.pdf',
-    13: '../rezepte_lwl_veg/13_Chicken-Katsu-Burger.pdf',
+    13: '../rezepte_lwl_veg/13_Suesskartoffel-Pizza.pdf',
     14: '../rezepte_lwl_veg/14_Maultaschenpfanne.pdf',
     15: '../rezepte_lwl_veg/15_Pasta-Trapanese-benannt-nach-der-sizilianischen-Stadt-Trapani.pdf',
     16: '../rezepte_lwl_veg/16_was-mit-Kohl.pdf',
@@ -152,13 +156,14 @@ const pdfs = {
     21: '../rezepte_lwl_veg/21_Suesskartoffel-Salat-mit-Nuessen-und-Huettenkaese.pdf',
     22: '../rezepte_lwl_veg/22_Rote-Bete-Burger.pdf',
     23: '../rezepte_lwl_veg/23_Traenchenkuchen-mit-Rhabarber.pdf',
-    24: '../rezepte_lwl_veg/24_Kuerbis-mit-Tahini-Zaatar.pdf',
+    24: '../rezepte_lwl_veg/24_Kuerbis-mit-Tahini-Zaatar.pdf'
   },
+
   vegan: {
     1: '../rezepte_vegan/01_Kichererbsen-Curry.pdf',
-    2: '../rezepte_vegan/02_Matts-Curry.pdf',
+    2: '../rezepte_vegan/02_Kartoffel-Karotten-Kohl-Eintopf.pdf',
     3: '../rezepte_vegan/03_Rote-Linsensuppe.pdf',
-    4: '../rezepte_vegan/04_Blumenkohl-Curry.pdf',
+    4: '../rezepte_vegan/04_Tom-Ka-Gai.pdf',
     5: '../rezepte_vegan/05_Dolma-Ein-Stueck-kurdische-Heimat-auf-dem-Teller.pdf',
     6: '../rezepte_vegan/06_Veganer-Curry.pdf',
     7: '../rezepte_vegan/07_Udon-Nudeln-in-Massaman-Erdnuss-Sauce-mit-Kokosmilch-und-Pak-Choi.pdf',
@@ -167,21 +172,40 @@ const pdfs = {
     10: '../rezepte_vegan/10_Maultaschenpfanne.pdf',
     11: '../rezepte_vegan/11_Kuerbissuppe-mit-Chili.pdf',
     12: '../rezepte_vegan/12_Mafaldine-mit-Kuerbissosse.pdf',
-    13: '../rezepte_vegan/13_Kartoffel-Karotten-Kohl-Eintopf.pdf',
+    13: '../rezepte_vegan/13_Matts-Curry.pdf',
     14: '../rezepte_vegan/14_Greek-Night.pdf',
     15: '../rezepte_vegan/15_Crunchy-Kartoffel-Wrap-aus-der-Pfanne-mit-Pesto-und-geraeuchertem-Tofu.pdf',
     16: '../rezepte_vegan/16_Graupenrisotto-mit-geroesteten-Rotkohlspalten.pdf',
     17: '../rezepte_vegan/17_Easy-peasy-Erdnuss-Miso-Ramen.pdf',
-    18: '../rezepte_vegan/18_Tom-Ka-Gai.pdf',
+    18: '../rezepte_vegan/18_Blumenkohl-Curry.pdf',
     19: '../rezepte_vegan/19_Dinkel-Wurzelbrot.pdf',
     20: '../rezepte_vegan/20_Chicken-Katsu-Burger.pdf',
     21: '../rezepte_vegan/21_Hausgemachte-Dinkelpizza.pdf',
     22: '../rezepte_vegan/22_Veggie-Bolognese-Pasta.pdf',
     23: '../rezepte_vegan/23_Kuerbis-mit-Tahini-Zaatar.pdf',
-    24: '../rezepte_vegan/24_Tide-me-over-bars.pdf',
+    24: '../rezepte_vegan/24_Tide-me-over-bars.pdf'
   },
+
   ODAE: {
-  },
+	  1: '../recipes_ODAE/01_Caramelized-Onion-Dip.pdf',
+2: '../recipes_ODAE/02_Honey-BBQ-Wings.pdf',
+3: '../recipes_ODAE/03_Rice-with-Coca-Cola-Recipe.pdf',
+4: '../recipes_ODAE/04_Crockpot-Beef-and-Broccoli.pdf',
+5: '../recipes_ODAE/05_Zimtsterne-Cinnamon-Stars.pdf',
+6: '../recipes_ODAE/06_Gebrannte-Mandeln-Candied-Almonds.pdf',
+7: '../recipes_ODAE/07_Tide-me-over-bars.pdf',
+8: '../recipes_ODAE/08_Gluten-Free-Lactose-Free-Banana-Chocolate-Chip-Muffins.pdf',
+9: '../recipes_ODAE/09_Pumpkin-Cookies.pdf',
+10: '../recipes_ODAE/10_Steamed-Christmas-Pudding.pdf',
+11: '../recipes_ODAE/11_Christmas-Crack.pdf',
+12: '../recipes_ODAE/12_Peaches-and-Cream-Chicken.pdf',
+13: '../recipes_ODAE/13_Nuts-and-Bolts.pdf',
+14: '../recipes_ODAE/14_Mint-Chocolate-Chip-Cookies.pdf',
+15: '../recipes_ODAE/15_Maple-Curry-Chicken-Penne.pdf',
+16: '../recipes_ODAE/16_Chubby-Hubby-Popcorn.pdf',
+17: '../recipes_ODAE/17_Eggplant-and-Tomato-Dip.pdf',
+18: '../recipes_ODAE/18_Rolo-Pretzel-Turtles.pdf',
+  }
 };
 
 const doors = document.getElementById('doors');
@@ -208,10 +232,6 @@ function showRecipe(dayNumber) {
   document.getElementById('dialogEyebrow').textContent = tr.door + ' ' + dayNumber;
   document.getElementById('dialogTitle').textContent = tr.today;
   const path = pdfs[config.key]?.[dayNumber];
-  console.log('Kalender:', config.key);
-console.log('Tag:', dayNumber);
-console.log('PDF-Zuordnung:', pdfs[config.key]);
-console.log('PDF-Pfad:', path);
   document.getElementById('dialogText').textContent = path ? '' : tr.missing;
   const link = document.getElementById('pdfLink');
   link.hidden = !path;
